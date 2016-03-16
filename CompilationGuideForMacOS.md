@@ -68,4 +68,6 @@
 ######`--enable-libtheora --enable-libvorbis --enable-libvpx --enable-libx264 --enable-libxvid`
 ######`make && sudo make install`
 
+######最后附上原文链接:[MacOSX](https://trac.ffmpeg.org/wiki/CompilationGuide/MacOSX)
+######对翻译有疑问，请联系[微博](http://weibo.com/409498119)指出。谢谢！转载请注明[本文链接](https://github.com/Kito0615/Translations/blob/master/CompilationGuideForMacOS.md)
 
