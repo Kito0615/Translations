@@ -8,7 +8,7 @@
 
 ####在OS X上编译FFmpeg有以下几种方法。
 #####1.自行编译。
-######在Mac OS X上编译和在其他Unix机器上编译一样简单，但是有几个警告。常规流程是获取源代码->`./configure <flags>`->`make && sudo make install`，只需输入指定的flags就可以了。
+######在Mac OS X上编译和在其他Unix机器上编译一样简单，但是有几个警告。常规流程是`获取源代码`->`./configure <flags>`->`make && sudo make install`，只需输入指定的flags就可以了。
 #####2.工具编译。
 ######另一种方法可以用一些"编译助手"工具来帮助你编译安装FFmpeg。比如[Homebrew](http://brew.sh/)和[macports](https://www.macports.org/)。具体步骤请查看本文[Homebrew章节](https://github.com/Kito0615/Translations/blob/master/CompilationGuideForMacOS.md#通过homebrew安装ffmpeg)。
 #####3.下载安装。
