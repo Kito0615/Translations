@@ -1,7 +1,7 @@
 #FFMPEG COMPILATION GUIDE FOR MAC OS X
 #FFMPEG -MAC编译指南
 
-#####以下内容翻译自[FFMPEG\Wiki\CompilationGuide\MacOSX](htts://trac.ffmpeg.org/CompilationGuide/MacOSX)
+#####以下内容翻译自[FFMPEG/Wiki/CompilationGuide/MacOSX](htts://trac.ffmpeg.org/CompilationGuide/MacOSX)
 ######原网址可能需要翻墙
 
 #####[Wiki](https://trac.ffmpeg.org/wiki):[CompilationGuide](https://trac.ffmpeg.org/wiki/CompilationGuide)/[MacOSX](https://trac.ffmpeg.org/wiki/CompilationGuide/MacOSX)
