@@ -52,13 +52,13 @@
 ######`make && sudo make install`(这一步，可能需要输入管理员密码)
 #####-额外依赖库
 ######以下仅仅只是举例，具体参数请输入`./configure --help`查看:
-######	*[x264](http://www.videolan.org/developers/x264.html) 编码H.264视频。编译参数`--enable-gpl --enable-libx264`
-######	*[fdk-aac](https://sourceforge.net/projects/opencore-amr/files/fdk-aac/)编码AAC音频。编译参数`--enable-libfdk-aac`
-######	*[libvpx](https://code.google.com/p/webm/downloads/list)。VP8/VP9视频编码器。编译参数`--enable-libvpx`
-######	*[libvorbis](http://downloads.xiph.org/releases/vorbis/) 编码Vorbis音频。需要[libogg](http://downloads.xiph.org/releases/ogg/)。编译参数`--enable-libvorbis`
-######	*[libopus](http://www.opus-codec.org/downloads/)编码Opus音频。
-######	*[LAME](https://sourceforge.net/projects/lame/files/lame/)编码MP3音频。编译参数`--enable-libmp3lame`
-######	*[libass](https://github.com/libass/libass)字幕渲染器。编译参数`--enable-libass`
+######		*[x264](http://www.videolan.org/developers/x264.html) 编码H.264视频。编译参数`--enable-gpl --enable-libx264`
+######		*[fdk-aac](https://sourceforge.net/projects/opencore-amr/files/fdk-aac/)编码AAC音频。编译参数`--enable-libfdk-aac`
+######		*[libvpx](https://code.google.com/p/webm/downloads/list)。VP8/VP9视频编码器。编译参数`--enable-libvpx`
+######		*[libvorbis](http://downloads.xiph.org/releases/vorbis/) 编码Vorbis音频。需要[libogg](http://downloads.xiph.org/releases/ogg/)。编译参数`--enable-libvorbis`
+######		*[libopus](http://www.opus-codec.org/downloads/)编码Opus音频。
+######		*[LAME](https://sourceforge.net/projects/lame/files/lame/)编码MP3音频。编译参数`--enable-libmp3lame`
+######		*[libass](https://github.com/libass/libass)字幕渲染器。编译参数`--enable-libass`
 #####正式编译
 ######如果你已经编译好了所有你想要的编码器/依赖库，你就可以使用Git下载FFmpeg的源代码或者从网站链接下载发布的压缩文件。研究`./configure --help`的输出，确保你已经启用了所有你想要功能，记住`--enable-nonfree`和`--enable-gpl`两个参数将是上面某些库的依赖条件。下面是一个编译例子:
 ######`git clone http://source.ffmpeg.org/git/ffmpeg.git ffmpeg`
