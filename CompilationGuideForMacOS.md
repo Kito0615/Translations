@@ -39,7 +39,7 @@
 #####不使用Homebrew手动安装FFmpeg依赖库
 #####-Pkg-config & GLib
 ######Pkg-config是检查可以被编译进ffmpeg的库的必要文件，它需要GLib，但是GLib并没有安装在Mac OS X(绝大多数Unix系统中都安装了)系统中。你还需要下载pkg-config 0.23,并且从[Gnome.org](http://ftp.gnome.org/pub/GNOME/sources/glib/)下载GLib压缩文件解压并编译它。pkg-config可以从[Freedesktop.org](http://pkgconfig.freedesktop.org/releases/)下载。
-######要编译GLib，你还要从[GNU.org(ftp://ftp.gnu.org/gnu/gettext/)](ftp://ftp.gnu.org/gnu/gettext/)下载gettext，并且编辑stpncpy.c文件，在"#ifndef weak_alias"前加一行"#undef stpncpy"。Mac OS X从10.7开始有它自己版本的stpncopy功能(不兼容)，在gettext里重复了。正常编译gettext就行了。使用以下命令编译GLib:
+######要编译GLib，你还要从[GNU.org](ftp://ftp.gnu.org/gnu/gettext/)下载gettext，并且编辑stpncpy.c文件，在"#ifndef weak_alias"前加一行"#undef stpncpy"。Mac OS X从10.7开始有它自己版本的stpncopy功能(不兼容)，在gettext里重复了。正常编译gettext就行了。使用以下命令编译GLib:
 ######`LIBFFI_CFLAGS=-I/usr/include/ffi LIBFFI_LIBS=-lffi`
 ######`./configure`
 ######`make && sudo make install`(这一步时，可能需要输入管理员密码)
