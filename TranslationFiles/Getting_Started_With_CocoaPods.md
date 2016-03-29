@@ -25,15 +25,19 @@ CocoaPods是用Ruby创建的，所有CocoaPods需要在Ruby环境下才能安装
 
 如果你在这个过程中不想授予RubyGems管理员特权，你可以通过设置`gem install`的`--user-install`标识指向用户路径告诉RubyGems将RubyGems安装到指定的用户目录下，也可以通过设置RubyGems环境变量来实现。后者是我们认为最好的解决办法。如果这样做，需要在用户主目录下创建并修改`.podfile`文件，添加或修改的内容如下:
 
-`export GEM_HOME=$HOME/.gem`
+>`export GEM_HOME=$HOME/.gem`
 
-`export PATH=$GEM_HOME/bin:/$PATH`
->注意，如果你使用了`--user-install`选项，你还需要设置在`.podfile`设置`PATH`参数或在使用这个命令前注入路径。你可以通过`gem which cocoapods`查看gem的安装位置。
+>`export PATH=$GEM_HOME/bin:/$PATH`
+
+注意，如果你使用了`--user-install`选项，你还需要设置在`.podfile`设置`PATH`参数或在使用这个命令前注入路径。你可以通过`gem which cocoapods`查看gem的安装位置。
 使用实例:
 
 >`$ gem install cocoapods --user-install`
+
 >`$ gem which cocoapods`
+
 >`/Users/eloy/.gem/ruby/2.0.0/gems/cocoapods-0.29.0/lib/cocoapods.rb`
+
 >`$ /Users/eloy/.gem/ruby/2.0.0/bin/pod install`
 
 #####1.3 升级CocoaPods
@@ -70,9 +74,13 @@ CocoaPods是用Ruby创建的，所有CocoaPods需要在Ruby环境下才能安装
 #####安装
 
 * 创建[Podfile](https://guides.cocoapods.org/using/the-podfile.html)，添加你的依赖库:
+
 >`target 'MyApp' do`
+
 >`	pod 'AFNetworking', '~>3.0'`
+
 >`	pod 'FBSDKCoreKit', '~>4.9'`
+
 >`end`
 
 * 在你的工程目录执行`$ pod install`命令。
@@ -92,7 +100,9 @@ CocoaPods是用Ruby创建的，所有CocoaPods需要在Ruby环境下才能安装
 * 通过使用`pod '$PODNAME'`在目标块之间添加一个CocoaPods
 
 >`target 'MyApp' do`
+
 >`	pod 'ObjectiveSugar'`
+
 >`end`
 
 * 保存Podfile
@@ -141,13 +151,13 @@ CocoaPods是用Ruby创建的，所有CocoaPods需要在Ruby环境下才能安装
 
 在Xcode中，直接引用[ruby source](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator.rb#L61-L65),进行了以下操作:
 
-	1.创建或更新了[工作空间](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator.rb#L82)
-	2.如果需要，[将你的工程添加到工作空间](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator.rb#L88-L94)
-	3.如果需要，[向工作空间中添加CocoaPods静态库](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/target_installer.rb#L40-L61)
-	4.添加libPods.a到:[目标=>编译选项=>链接库](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer.rb#L385-L393)
-	5.向你的app工程中添加CocoaPods[Xcode配置文件](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator/target_integrator.rb#L112)
-	6.根据CocoaPods的目标配置更改你app的[目标配置](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/generator/xcconfig/aggregate_xcconfig.rb#L46-L73)
-	7.根据安装绑定到你app的pods[复制源](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator/target_integrator.rb#L145)即在添加其他编译选项后添加如下内容到`Script build phase`(脚本编译选项):
+1.创建或更新了[工作空间](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator.rb#L82)
+2.如果需要，[将你的工程添加到工作空间](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator.rb#L88-L94)
+3.如果需要，[向工作空间中添加CocoaPods静态库](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/target_installer.rb#L40-L61)
+4.添加libPods.a到:[目标=>编译选项=>链接库](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer.rb#L385-L393)
+5.向你的app工程中添加CocoaPods[Xcode配置文件](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator/target_integrator.rb#L112)
+6.根据CocoaPods的目标配置更改你app的[目标配置](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/generator/xcconfig/aggregate_xcconfig.rb#L46-L73)
+7.根据安装绑定到你app的pods[复制源](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator/target_integrator.rb#L145)即在添加其他编译选项后添加如下内容到`Script build phase`(脚本编译选项):
 
 >* Shell:/bin/sh
 >* Script:${SRCROOT}/Pods/PodsResources.sh
