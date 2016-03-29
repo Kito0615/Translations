@@ -152,11 +152,17 @@ CocoaPods是用Ruby创建的，所有CocoaPods需要在Ruby环境下才能安装
 在Xcode中，直接引用[ruby source](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator.rb#L61-L65),进行了以下操作:
 
 1.创建或更新了[工作空间](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator.rb#L82)
+
 2.如果需要，[将你的工程添加到工作空间](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator.rb#L88-L94)
+
 3.如果需要，[向工作空间中添加CocoaPods静态库](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/target_installer.rb#L40-L61)
+
 4.添加libPods.a到:[目标=>编译选项=>链接库](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer.rb#L385-L393)
+
 5.向你的app工程中添加CocoaPods[Xcode配置文件](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator/target_integrator.rb#L112)
+
 6.根据CocoaPods的目标配置更改你app的[目标配置](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/generator/xcconfig/aggregate_xcconfig.rb#L46-L73)
+
 7.根据安装绑定到你app的pods[复制源](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator/target_integrator.rb#L145)即在添加其他编译选项后添加如下内容到`Script build phase`(脚本编译选项):
 
 >* Shell:/bin/sh
