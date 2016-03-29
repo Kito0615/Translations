@@ -47,39 +47,39 @@
 ######`	pod 'AFNetworking', '~>3.0'`
 ######`	pod 'FBSDKCoreKit', '~>4.9'`
 ######`end`
-######* 在你的工程目录执行`$ pod install`命令。
-######* 打开`App.xcworkspace`并开始工作。
+* 在你的工程目录执行`$ pod install`命令。
+* 打开`App.xcworkspace`并开始工作。
 #####使用CocoaPods创建一个新Xcode项目
 ######要使用CocoaPods创建一个新项目，只需要以下几个简单的步骤:
-######* 正常使用Xcode创建一个新工程。
-######* 打开终端窗口，使用`$ cd`命令进入到工程所有目录。
-######* 创建Podfile. 可以通过`$ pod init`命令完成。
-######* 打开Podfile.第一行需要指明支持的系统及版本.
+* 正常使用Xcode创建一个新工程。
+* 打开终端窗口，使用`$ cd`命令进入到工程所有目录。
+* 创建Podfile. 可以通过`$ pod init`命令完成。
+* 打开Podfile.第一行需要指明支持的系统及版本.
 ######`platform: ios, '9.0'`
-######* 要使用CocoaPods，你需要定义Xcode目标并连接它们。例如，如果你准备写一个iOS程序，那Xcode目标就是你的app。通过在`target '$TARGET_NAME' do`和`end`之间使用几行代码创建目标
-######* 通过使用`pod '$PODNAME'`在目标块之间添加一个CocoaPods
+* 要使用CocoaPods，你需要定义Xcode目标并连接它们。例如，如果你准备写一个iOS程序，那Xcode目标就是你的app。通过在`target '$TARGET_NAME' do`和`end`之间使用几行代码创建目标
+* 通过使用`pod '$PODNAME'`在目标块之间添加一个CocoaPods
 ######`target 'MyApp' do`
 ######`	pod 'ObjectiveSugar'`
 ######`end`
-######* 保存Podfile
-######* 执行`$ pod install`命令
-######* 打开创建的`MyApp.xcworkspace`项目。以后就使用这个文件作为你创建app的每天要使用文件。
+* 保存Podfile
+* 执行`$ pod install`命令
+* 打开创建的`MyApp.xcworkspace`项目。以后就使用这个文件作为你创建app的每天要使用文件。
 #####集成已经存在的工作空间
 ######使用CocoaPods集成已经存在的工作空间需要在Podfile中增加一行。在目标块外面简单声明`.xcworkspace`文件的文件名。
 ######`workspace 'MyWorkspace'`
 ####什么时候使用__pod install__,使用时候使用__pod update__?
 ######许多人都比较疑惑，什么时候应该用`pod install`, 什么时候应该用`pod update`。特别是在他们应该使用`pod install`的时候却经常使用`pod update`.
-######你可以在[pod install vs pod update](https://guides.cocoapods.org/using/pod-install-vs-update.html)这篇这文章中找到关于什么时候该使用哪个命令以及每个命令的目的是什么的更详细的解释。
+######你可以在[pod install vs pod update](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/Getting_Started_With_CocoaPods.md#pod-install-vs-pod-update)这篇这文章中找到关于什么时候该使用哪个命令以及每个命令的目的是什么的更详细的解释。
 #####我应该将Pods路径加入到代码控制当中吗？
 ######是否将Pods文件夹添加到代码控制中完全取决于你自己，因为工作流在项目之间不断变化。我们建议你将Pods目录添加到代码管理当中，而不是添加到`.gitignore`文件当中。但是最终的决定权在于你:
 #####添加Pods目录到代码管理的好处
-######* 在复制项目(仓库)之后，立即编译和执行工程，甚至都没有在机器上安装CocoaPods。就没有必要执行`pod install`了，而且不能连接网络。
-######* 即使Pod源(如:GitHub)失效了，Pod文件(代码/库)常常也是可用的。
-######* Pod文件可以在复制项目(仓库)之后，保证是和原来安装的是一样的。
+* 在复制项目(仓库)之后，立即编译和执行工程，甚至都没有在机器上安装CocoaPods。就没有必要执行`pod install`了，而且不能连接网络。
+* 即使Pod源(如:GitHub)失效了，Pod文件(代码/库)常常也是可用的。
+* Pod文件可以在复制项目(仓库)之后，保证是和原来安装的是一样的。
 #####忽略Pod目录的好处
-######* 代码管理项目(仓库)会更小，占用更少的空间。
-######* 只要源(如:GitHub)的所有Pods可用，CocoaPods会能够自动重新创建安装。(严格来说，当没有使用提交Podfile的哈希值时，无法保证执行`pod install`命令将会获取并重新创建特定的文件。尤其是在Podfile中使用zip压缩文件时)
-######* 否要将Pod目录添加到代码控制中，`Podfile`和`Podfile.lock`都应该在版本控制中。
+* 代码管理项目(仓库)会更小，占用更少的空间。
+* 只要源(如:GitHub)的所有Pods可用，CocoaPods会能够自动重新创建安装。(严格来说，当没有使用提交Podfile的哈希值时，无法保证执行`pod install`命令将会获取并重新创建特定的文件。尤其是在Podfile中使用zip压缩文件时)
+* 否要将Pod目录添加到代码控制中，`Podfile`和`Podfile.lock`都应该在版本控制中。
 ####什么是`Podfile.lock`？
 ######这个文件是在执行`pod install`命令之后自动生成的，它记录了每个Pod的版本是什么时候安装的。比如:在Podfile中声明以下依赖库
 ######`pod ‘RestKit`
@@ -95,8 +95,8 @@
 ######	5.向你的app工程中添加CocoaPods[Xcode配置文件](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator/target_integrator.rb#L112)
 ######	6.根据CocoaPods的目标配置更改你app的[目标配置](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/generator/xcconfig/aggregate_xcconfig.rb#L46-L73)
 ######	7.根据安装绑定到你app的pods[复制源](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator/target_integrator.rb#L145)即在添加其他编译选项后添加如下内容到`Script build phase`(脚本编译选项):
-######		* Shell:/bin/sh
-######		* Script:${SRCROOT}/Pods/PodsResources.sh
+		* Shell:/bin/sh
+		* Script:${SRCROOT}/Pods/PodsResources.sh
 ######注意，如果CocoaPods静态库已经添加到你的项目中，将跳过第三步。这是基于Jonah Williams的利用[静态库](http://blog.carbonfive.com/2011/04/04/using-open-source-static-libraries-in-xcode-4/)
 ####Pods和子模块
 ######CocoaPods和git子模块是尝试用来解决非常相似的问题的。都致力于简化包含添加第三方代码到你的项目的过程。子模块是连接到项目的特定提交(提交时间)，而CocoaPods是绑定到开发者发布的版本。
@@ -114,16 +114,16 @@
 ######许多刚刚开始使用CocoaPods的人认为好像只有在第一次用CocoaPods设置项目的时候使用`pod install`，以后都使用`pod update`.**但实际并不是这样的。**
 ######这篇指南的目的就是向你们解释什么时候使用`pod install`，什么时候使用`pod update`的。
 ######TL;DR:(too long, don't read)简单说来:
-######	* 在安装新的Pod到你的项目里时使用`pod install`。**即使你已经有了`Podfile`也已经执行过`pod install`了**，当你向一个已经使用过CocoaPods的项目里添加/删除pods时。
-######	* 只有当你想要**更新pods到更新的版本**时才使用`pod update [PODNAME]`
+	* 在安装新的Pod到你的项目里时使用`pod install`。**即使你已经有了`Podfile`也已经执行过`pod install`了**，当你向一个已经使用过CocoaPods的项目里添加/删除pods时。
+	* 只有当你想要**更新pods到更新的版本**时才使用`pod update [PODNAME]`
 ####详细说明这两个命令
 ######> 注意:CocoaPods中的`install`和`update`并不准确。它的灵感来自于许多其他依赖库管理器如:[bundler](http://bundler.io/), [RubyGems](https://rubygems.org/)或者[composer](https://getcomposer.org/),这些都有相似的命令，这些命令都与这篇指南中的描述功能一样。
 #####pod install
 ######这不仅是在第一次向项目中获取pods(第三方库)时使用的命令，而且每次你编辑Podfile，添加/更新/删除pod的时候也要使用它。
-######	* 每次运行/下载/安装新的pods时使用`pod install`命令，它都会将每个已经安装的每个pods的版本写到Podfile.lock文件中。这个文件记录并且锁定每个pod的安装的版本。
-######	* 当你执行`pod install`命令时，它只解析**不在**`Podfile.lock`列表中依赖库。
-######		* 对于已经在`Podfile.lock`列表中的pods，`pod install`命令只会下载`Podfile.lock`列表中指定的版本而不会检查是否有更新的版本可用。
-#####		* 对于不在`Podfile.lock`列表中的pods，`pod install`命令会搜索`Podfile`中描述的版本(如:`pod 'MyPod', '~>1.2'`)
+	* 每次运行/下载/安装新的pods时使用`pod install`命令，它都会将每个已经安装的每个pods的版本写到Podfile.lock文件中。这个文件记录并且锁定每个pod的安装的版本。
+	* 当你执行`pod install`命令时，它只解析**不在**`Podfile.lock`列表中依赖库。
+		* 对于已经在`Podfile.lock`列表中的pods，`pod install`命令只会下载`Podfile.lock`列表中指定的版本而不会检查是否有更新的版本可用。
+		* 对于不在`Podfile.lock`列表中的pods，`pod install`命令会搜索`Podfile`中描述的版本(如:`pod 'MyPod', '~>1.2'`)
 ####pod outdated
 ######当你执行`pod outdate`命令时，CocoaPods将会列出`Podfile.lock`列表中(即当前已经安装的版本)有更新版本可用的pods。也就是说如果你对在上述列表中的pods执行`pod update PODNAME`命令，这些pod将会被更新-同样也会更新在`Podfile`文件中的规则为匹配更新版本,如:`pod 'MyPod', '~>x.y'`
 #####pod update
