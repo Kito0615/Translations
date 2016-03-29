@@ -30,10 +30,12 @@ CocoaPods是用Ruby创建的，所有CocoaPods需要在Ruby环境下才能安装
 `export PATH=$GEM_HOME/bin:/$PATH`
 >注意，如果你使用了`--user-install`选项，你还需要设置在`.podfile`设置`PATH`参数或在使用这个命令前注入路径。你可以通过`gem which cocoapods`查看gem的安装位置。
 使用实例:
+
 >`$ gem install cocoapods --user-install`
 >`$ gem which cocoapods`
 >`/Users/eloy/.gem/ruby/2.0.0/gems/cocoapods-0.29.0/lib/cocoapods.rb`
 >`$ /Users/eloy/.gem/ruby/2.0.0/bin/pod install`
+
 #####1.3 升级CocoaPods
 
 要升级CocoaPods，你只需要重新安装一下gem就可以了。
