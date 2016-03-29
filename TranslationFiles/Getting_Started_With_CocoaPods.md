@@ -107,8 +107,8 @@
 ######	6.根据CocoaPods的目标配置更改你app的[目标配置](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/generator/xcconfig/aggregate_xcconfig.rb#L46-L73)
 ######	7.根据安装绑定到你app的pods[复制源](https://github.com/CocoaPods/CocoaPods/blob/master/lib/cocoapods/installer/user_project_integrator/target_integrator.rb#L145)即在添加其他编译选项后添加如下内容到`Script build phase`(脚本编译选项):
 
-		* Shell:/bin/sh
-		* Script:${SRCROOT}/Pods/PodsResources.sh
+* Shell:/bin/sh
+* Script:${SRCROOT}/Pods/PodsResources.sh
 
 ######注意，如果CocoaPods静态库已经添加到你的项目中，将跳过第三步。这是基于Jonah Williams的利用[静态库](http://blog.carbonfive.com/2011/04/04/using-open-source-static-libraries-in-xcode-4/)
 ####Pods和子模块
@@ -128,19 +128,19 @@
 ######这篇指南的目的就是向你们解释什么时候使用`pod install`，什么时候使用`pod update`的。
 ######TL;DR:(too long, don't read)简单说来:
 
-	* 在安装新的Pod到你的项目里时使用`pod install`。**即使你已经有了`Podfile`也已经执行过`pod install`了**，当你向一个已经使用过CocoaPods的项目里添加/删除pods时。
-	* 只有当你想要**更新pods到更新的版本**时才使用`pod update [PODNAME]`
+* 在安装新的Pod到你的项目里时使用`pod install`。**即使你已经有了`Podfile`也已经执行过`pod install`了**，当你向一个已经使用过CocoaPods的项目里添加/删除pods时。
+* 只有当你想要**更新pods到更新的版本**时才使用`pod update [PODNAME]`
 
 ####详细说明这两个命令
-######> 注意:CocoaPods中的`install`和`update`并不准确。它的灵感来自于许多其他依赖库管理器如:[bundler](http://bundler.io/), [RubyGems](https://rubygems.org/)或者[composer](https://getcomposer.org/),这些都有相似的命令，这些命令都与这篇指南中的描述功能一样。
+> 注意:CocoaPods中的`install`和`update`并不准确。它的灵感来自于许多其他依赖库管理器如:[bundler](http://bundler.io/), [RubyGems](https://rubygems.org/)或者[composer](https://getcomposer.org/),这些都有相似的命令，这些命令都与这篇指南中的描述功能一样。
 #####pod install
 ######这不仅是在第一次向项目中获取pods(第三方库)时使用的命令，而且每次你编辑Podfile，添加/更新/删除pod的时候也要使用它。
 
-	* 每次运行/下载/安装新的pods时使用`pod install`命令，它都会将每个已经安装的每个pods的版本写到Podfile.lock文件中。这个文件记录并且锁定每个pod的安装的版本。
-	* 当你执行`pod install`命令时，它只解析**不在**`Podfile.lock`列表中依赖库。
-		* 对于已经在`Podfile.lock`列表中的pods，`pod install`命令只会下载`Podfile.lock`列表中指定的版本而不会检查是否有更新的版本可用。
-		* 对于不在`Podfile.lock`列表中的pods，`pod install`命令会搜索`Podfile`中描述的版本(如:`pod 'MyPod', '~>1.2'`)
-		
+* 每次运行/下载/安装新的pods时使用`pod install`命令，它都会将每个已经安装的每个pods的版本写到Podfile.lock文件中。这个文件记录并且锁定每个pod的安装的版本。
+* 当你执行`pod install`命令时，它只解析**不在**`Podfile.lock`列表中依赖库。
+	* 对于已经在`Podfile.lock`列表中的pods，`pod install`命令只会下载`Podfile.lock`列表中指定的版本而不会检查是否有更新的版本可用。
+	* 对于不在`Podfile.lock`列表中的pods，`pod install`命令会搜索`Podfile`中描述的版本(如:`pod 'MyPod', '~>1.2'`)
+
 ####pod outdated
 ######当你执行`pod outdate`命令时，CocoaPods将会列出`Podfile.lock`列表中(即当前已经安装的版本)有更新版本可用的pods。也就是说如果你对在上述列表中的pods执行`pod update PODNAME`命令，这些pod将会被更新-同样也会更新在`Podfile`文件中的规则为匹配更新版本,如:`pod 'MyPod', '~>x.y'`
 #####pod update
