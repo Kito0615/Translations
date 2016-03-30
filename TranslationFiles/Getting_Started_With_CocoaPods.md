@@ -284,9 +284,102 @@ TL;DR:(too long, don't read)简单说来:
 
 这就是什么只有使用`Podfile.lock`文件以及恰当地使用`pod install`和`pod update`命令可以保证每个成员在自己的电脑上都能使用相同版本的pod
 
+--
+###Podfile
+####什么是Podfile？
 
+Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个文件应该简单命名为`Podfile`。本文以下所有的示例都是按照在CocoaPods1.0及以后版本的规范来写的。
 
+>一个Podfile可以非常简单，下面只是为目标添加了`AFNetworking`。
 
+>target 'MyApp' do
+>	pod 'AFNetworking', '~>3.0'
+>end
+
+>下面是一个稍微复杂的示例，它链接了app到它的测试绑定。
+
+>source 'https://github.com/CocoaPods/Specs.git'
+>source 'https://github.com/Artsy/Specs.git'
+>
+>platform :ios, '9.0'
+>inhibit_all_warnings!
+>
+>target 'MyApp' do
+>	pod 'GoogleAnalytics', '~>3.1'
+>
+>	#Has its own copy of OCMock
+>	#and has access to GoogleAnalytics via the app
+>	#taht hosts the test target
+>
+>	target 'MyAppTests' do
+>		inherit! :search_paths
+>		pod 'OCMock', '~>2.0.1'
+>	end
+>end
+>
+>post_install do |installer|
+>	installer.pods_project.targets.each do |target|
+>		puts target.name
+>	end
+>end
+
+>如果你想多个目标共享同一个pod，使用`abstract_target`
+
+>#There are no targets called "Show" in any Xcode projects
+>#这儿并没有任何一个Xcode项目叫"Show"
+>abstract_target 'Shows' do
+>	pod 'ShowsKit'
+>	pod 'Fabric'
+>	#Has its own copy of ShowsKit + ShowWebAuth
+>	#拥有它自己的ShowKit和ShowWebAuth的副本
+>	target 'ShowsiOS' do
+>		pod 'ShowWebAuth'
+>	end
+>	#Has its own copy of ShowsKit + ShowTVAuth
+>	target 'ShowsTV' do
+>		pod 'ShowTVAuth'
+>	end
+>end
+
+在Podfile的根源隐含了一个绝对目标，因此你也可以将上面示例写成这样:
+
+>pod 'ShowsKit'
+>pod 'Fabric'
+>
+>#Has its own copy of ShowsKit + ShowWebAuth
+>target 'ShowsiOS' do
+>	pod 'ShowWebAuth'
+>end
+>
+>#Has its own copy of ShowsKit + ShowTVAuth
+>target 'ShowsTV' do
+>	pod 'ShowTVAuth'
+>end
+
+######从0.x迁移到1.0
+
+我们在[博客](http://blog.cocoapods.org/CocoaPods-1.0/)里深度解释了所作的改变。
+
+######指定pod版本
+
+>当我们开始一个新项目时，你可能希望使用最新版本的Pod。如果是这样，只需要忽略掉版本要求。
+
+>pod 'SSZipArchive'
+
+>以后你可能希望使用指定版本的Pod，这样的话，你可以指定版本编号.
+
+>pod 'Objection', '0.9'
+
+除此之外，没有版本号或不确定版本号，以下逻辑运算也是可以的:
+
+* `> 0.1` 大于版本号为0.1的任何版本
+* `>= 0.1` 大于或等于版本号为0.1的任何版本
+* `< 0.1` 小于版本号为0.1的任何版本
+* `<= 0.1` 小于或等于版本号为0.1的任何版本
+
+CocoaPods除了逻辑运行符之外还有一个开放式运算符(Optimistic Operator)`~>`:
+
+* `~> 0.1.2` 版本号为0.1.2
 
 
 
