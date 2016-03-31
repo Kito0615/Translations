@@ -320,11 +320,11 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 
 > 
 
-> 	#Has its own copy of OCMock
+> 	//Has its own copy of OCMock
 
-> 	#and has access to GoogleAnalytics via the app
+>  	//and has access to GoogleAnalytics via the app
 
-> 	#taht hosts the test target
+> 	//taht hosts the test target
 
 > 
 
@@ -354,9 +354,9 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 > 如果你想多个目标共享同一个pod，使用`abstract_target`
 
 
->#There are no targets called "Show" in any Xcode projects
+>//There are no targets called "Show" in any Xcode projects
 
->#这儿并没有任何一个Xcode项目叫"Show"
+>//这儿并没有任何一个Xcode项目叫"Show"
 
 > abstract_target 'Shows' do
 
@@ -364,9 +364,9 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 
 > 	pod 'Fabric'
 
->#Has its own copy of ShowsKit + ShowWebAuth
+>//Has its own copy of ShowsKit + ShowWebAuth
 
->#拥有它自己的ShowKit和ShowWebAuth的副本
+>//拥有它自己的ShowKit和ShowWebAuth的副本
 
 > 	target 'ShowsiOS' do
 
@@ -374,7 +374,7 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 
 > 	end
 
->#Has its own copy of ShowsKit + ShowTVAuth
+>//Has its own copy of ShowsKit + ShowTVAuth
 
 > 	target 'ShowsTV' do
 
@@ -385,7 +385,7 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 > end
 
 
-在Podfile的根源隐含了一个绝对目标，因此你也可以将上面示例写成这样:
+在Podfile的根目录里隐含了一个绝对目标，因此你也可以将上面示例写成这样:
 
 > pod 'ShowsKit'
 
@@ -403,7 +403,7 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 
 > 
 
->#Has its own copy of ShowsKit + ShowTVAuth
+>//Has its own copy of ShowsKit + ShowTVAuth
 
 > target 'ShowsTV' do
 
