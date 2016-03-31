@@ -354,9 +354,9 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 > 如果你想多个目标共享同一个pod，使用`abstract_target`
 
 
-> #There are no targets called "Show" in any Xcode projects
+>#There are no targets called "Show" in any Xcode projects
 
-> #这儿并没有任何一个Xcode项目叫"Show"
+>#这儿并没有任何一个Xcode项目叫"Show"
 
 > abstract_target 'Shows' do
 
@@ -364,9 +364,9 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 
 > 	pod 'Fabric'
 
-> 	#Has its own copy of ShowsKit + ShowWebAuth
+>#Has its own copy of ShowsKit + ShowWebAuth
 
-> 	#拥有它自己的ShowKit和ShowWebAuth的副本
+>#拥有它自己的ShowKit和ShowWebAuth的副本
 
 > 	target 'ShowsiOS' do
 
@@ -374,7 +374,7 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 
 > 	end
 
-> 	#Has its own copy of ShowsKit + ShowTVAuth
+>#Has its own copy of ShowsKit + ShowTVAuth
 
 > 	target 'ShowsTV' do
 
@@ -393,7 +393,7 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 
 > 
 
-> #Has its own copy of ShowsKit + ShowWebAuth
+> //Has its own copy of ShowsKit + ShowWebAuth
 
 > target 'ShowsiOS' do
 
@@ -403,7 +403,7 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 
 > 
 
-> #Has its own copy of ShowsKit + ShowTVAuth
+>#Has its own copy of ShowsKit + ShowTVAuth
 
 > target 'ShowsTV' do
 
@@ -428,7 +428,6 @@ Podfile是描述一个或多个Xcode项目目标依赖关系的规范。这个�
 
 
 > pod 'Objection', '0.9'
-
 
 除此之外，没有版本号或不确定版本号，以下逻辑运算也是可以的:
 
