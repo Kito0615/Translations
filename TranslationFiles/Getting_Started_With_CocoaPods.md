@@ -450,7 +450,43 @@ CocoaPods除了逻辑运行符之外还有一个开放式运算符(Optimistic Op
 
 ####使用本地机器中的文件夹中的文件
 
->  如果你想
+>  如果你想创建一个Pod和它的客户端串联起来，你可以使用`:path`。
+
+
+> `pod 'AFNetworking`, :path => '~/Documents/AFNetworking'
+
+使用CocoaPods的这个选项会假设给定的路径是Pod的根目录，将会在Pod项目中直接链接这些文件。这意味着你的编辑将会保留在CocoaPods的安装中。引用的目录可以被你收藏的SCM或当前仓库的git子模块检查。
+
+注意:Pod文件的`Podspec`应该在指定的目录中。
+
+######库目录(仓库根目录)中的Podspec文件
+有时你可能希望使用Pod的最新版本、特定版本或者你自己创建版本。如果是这样，你可以在Pod声明中指定。
+
+ 要使用仓库的`master`分支:
+
+> `pod 'AFNetworking', :git => 'https://github.com/gowalla/AFNetworking.git'`
+
+ 要使用仓库的不同分支:
+
+> `pod 'AFNetworking', :git => 'https://github.com/gowalla/AFNetworking.git', :branch => 'dev'`
+
+ 要使用仓库的标签:
+
+> `pod 'AFNetworking', :git => 'https://github.com/gowalla/AFNetworking.git', :tag => '0.7.0'`
+
+ 要使用特定的提交版本:
+
+> `pod 'AFNetworking', :git => 'https://github.com/gowalla/AFNetworking.git', :commit => '082f8319af'`
+
+值得注意的是，这个方法意味着版本号必须满足其他依赖于这个pod的其他pod。
+
+`podspec`文件应该在仓库的根目录下，如果一个库没有`podspec`文件，你肯定会用到下一节列举的方法之一。
+
+####参考资料
+
+* [Podfile，非凡的艺术性/Eigen](https://github.com/artsy/eigen/blob/master/Podfile)
+* [Swfit项目中Podfile的艺术/Eidolon](https://github.com/artsy/eidolon/blob/master/Podfile)
+
 
 
 
