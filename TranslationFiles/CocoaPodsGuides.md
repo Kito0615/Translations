@@ -485,16 +485,79 @@ CocoaPods除了逻辑运行符之外还有一个开放式运算符(Optimistic Op
 
 * [Podfile，非凡的艺术性/Eigen](https://github.com/artsy/eigen/blob/master/Podfile)
 * [Swfit项目中Podfile的艺术/Eidolon](https://github.com/artsy/eidolon/blob/master/Podfile)
+--
+###疑难解答
+#####安装CocoaPods
+* 如果你的电脑是OS X10.9.0～10.9.2，当RubyGems尝试安装`json` gem的时候你可能会遇到问题。请按照这篇[指南](https://gist.github.com/alloy/62326fcbc5b8ef987c17)解决
+* 从OS X10.8升级到10.9之后怎么也不能安装CocoaPods，即使重新安装gem也不行。要解决这个问题，你可以需要先卸载再重新安装gem。
 
+> $ gem uninstall cocoapods
+> $ gem install cocoapods
 
+* 安装的gem可能不能自动编译，要解决，你可能需要[连接GCC](http://www.relaxdiego.com/2012/02/using-gcc-when-xcode-43-is-installed.html)
+* 如果你使用的是预览版Xcode，你可以需要升级command line tools(命令行工具)
+* CocoaPods可能与MacRuby不兼容。
 
+#####使用CocoaPods项目
 
+1. 如果有时CocoaPods不正常工作了，首先确保你完全没有修改过项目里的`Pods.xcconfig`的任何编译设置选项。要往你项目里添加项目编译选项，在列表值前面添加`$(inherited)`。
+2. 如果Xcode不能找到依赖库的头文件:
+	* 检查`Pods/Headers`里的符号连接是否正确，并且你没有修改过`HEADER_SEARCH_PATH`(参考第一条)
+	* 确保你的项目正在使用`Pods.xcconfig`文件。要检查这一项，选中你的项目文件，在第二个面板中再选中，然后打开第三个面板中的`Info`标签。在配置选项下面，你应该在每项你安装的pods的配置要求的地方选择`Pods.xcconfig`。
+	* 如果你的Xcode仍然找不到它们，最后一个方法你可以在你的imports(导入)前，写上如以下命令:`#import "Pods/SSZipArchive.h"`
+3. 如果你得到关于无法识别C编译器的命令行错误，如:
 
+> `cc1obj: error: unrecognised command line options "-Wno-sign-conversion`:
 
+	* 首先保证你的项目[设置](https://img.skitch.com/20111120-brfn4mp8qwrju8w8325wphan9h.png)使用的是"Apple LLVM compiler"(clang)
+	* 检查在你的像`~/.profile`文件中是否设置过`CC`、`CPP`、`CXX`这样的环境变量。这可能干预Xcode编译过程。如果有，从`~/.profile`文件中删除掉环境变量。
 
+4. 当Xcode在链接的时候出现如:`Library not found for -lPods`错误时，它并没有检测到隐藏的依赖:
+	* 打开`Product`->`Edit Scheme`
+	* 选项`Build`标签
+	* 添加`Pods`静态库，并保证它在列表的最上方
+	* 清除并重新编译
+	* 如果上述操作没用，检查你要包含的spec已经从GitHub上获取了。查看目录`<项目路径>/Pods/<你要包含的spec>`。如果里面是空的(它不应该是空的)，检查`~/.cocoapods/master/<spec>/<spec>.cocoapods`里包含的GitHub上路径是正确的。
+	* 如果还是不行，检查你的Xcode本地设置。打开`Preferences`->`Locations`->`Derived Data`->`Advanced`,设置编译位置为"Relative to Workspace"
+* 如果你准备提交到App Store，打开`Product`->`Archive`发现"Orgnaizer"页面什么也没有:
+	* 在Xcode的"Build Settings"选项中，找到"Skip Install"。设置应用程序目标的"Release"为"NO"。再次编译应该可以了。
 
+*不同版本的Xcode可能有不同的问题。向我们救助并告诉我们你使用的版本*
 
+#####在使用静态库时出现"Duplicate Symbol"错误怎么办？
+这个错误通常出现在你的程序中使用了包含常用依赖的第三方闭源库的情况。一种方法是从静态库中强制移除这个依赖关系。具体方法请参考[这里](http://atnan.com/blog/2012/01/12/avoiding-duplicate-symbol-errors-during-linking-by-removing-classes-from-static-libraries)
 
+然而，通常情况下，三方库包含的依赖库都有前缀，你不需要去处理它。如果出现了，请联系开发者，让他们修改，然后使用上述方法作为临时操作。
 
+#####在执行pod命令时遇到权限错误
+到CocoaPods0.32.0版本的时候，我们移除了pod命令使用root权限来防止当用户混合使用root权限执行CocoaPods进入(权限)相矛盾的状态。
 
+如果你在某一阶段使用root权限执行CocoaPods命令，当你执行到某一操作时，你可能就会遇到权限错误。当你遇到权限错误时，你可能需要删除那些缓存数据中使用root权限旧文件。你可以这样做:
+
+> $ sudo rm -fr ~/Library/Caches/CocoaPods/
+> $ sudo rm -fr ~/.cocoapods/repos/master/
+
+同时，那些全局文件，也可能是一个`Pods`目录可能出现在任何包含Podfile的目录。如果你仍然收到权限错误，你应该也要删除那些文件，然后再执行`pod install`.
+
+> $ sudo rm -fr Pods/
+
+#####我想使用master/branch(分支)，但是我被堵塞了。
+
+这里有一篇文章[使用CocoaPods某个版本尝试新功能](https://guides.cocoapods.org/using/unreleased-features)
+
+#####没有找到解决方案
+
+我们有多种支持途径，按我们喜欢的顺序列出:
+
+* [Stack Overflow](http://stackoverflow.com/search?q=CocoaPods), 连接网络。这可以让CocoaPods的开发团队没有压力，并且给我们时间去解决没有解决的问题。
+* [CocoaPods团队邮箱列表](http://groups.google.com/group/cocoapods)，这个邮箱列表主要用来发布相关项目和支持。
+* 如果你的问题是关于通过CocoaPods发布的库，请参考[spec repo](https://github.com/CocoaPods/Specs)
+
+#####我认为CocoaPods有bug
+这种情况我们希望你可以在GitHub的问题追踪版块提出，这样我们用来可以记录我们开发工作。
+
+* __在你新建之前先搜索一下__。如果你有新的总是，请添加到已有项目。
+* 
+* __只允许关于CocoaPods工具的问题__。包含[CocoaPods](https://github.com/CocoaPods/CocoaPods/issues)、[CocoaPods/Core](https://github.com/CocoaPods/Core/issues)和[Xcodeproj](https://github.com/CocoaPods/Xcodeproj/issues)
+* __保证名称简单但好记__。确保你包含的内容可以被用来解决问题。别重复做。好的意见允许我们关注解决问题而不讨论问题。
 
