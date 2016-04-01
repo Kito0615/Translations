@@ -20,7 +20,7 @@ CocoaPods是用Ruby创建的，所有CocoaPods需要在Ruby环境下才能安装
 
 `$ sudo gem install cocoapods`
 
-如何你在安装过程中，遇到任何问题，请访问[疑难解答](https://guides.cocoapods.org/using/troubleshooting#installing-cocoapods).
+如何你在安装过程中，遇到任何问题，请访问[疑难解答](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/CocoaPodsGuides.md#疑难解答).
 #####1.2 非超级管理员安装
 
 如果你在这个过程中不想授予RubyGems管理员特权，你可以通过设置`gem install`的`--user-install`标识指向用户路径告诉RubyGems将RubyGems安装到指定的用户目录下，也可以通过设置RubyGems环境变量来实现。后者是我们认为最好的解决办法。如果这样做，需要在用户主目录下创建并修改`.podfile`文件，添加或修改的内容如下:
@@ -485,6 +485,7 @@ CocoaPods除了逻辑运行符之外还有一个开放式运算符(Optimistic Op
 
 * [Podfile，非凡的艺术性/Eigen](https://github.com/artsy/eigen/blob/master/Podfile)
 * [Swfit项目中Podfile的艺术/Eidolon](https://github.com/artsy/eidolon/blob/master/Podfile)
+
 --
 ###疑难解答
 #####安装CocoaPods

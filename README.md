@@ -9,4 +9,4 @@
 #####以下是文章列表
 1. [Mac下编译FFmpeg](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/CompilationGuideForMacOS.md)
 
-2. [CocoaPods指南](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/Getting_Started_With_CocoaPods.md)
+2. [CocoaPods指南](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/CocoaPodsGuides.md)
