@@ -11,4 +11,4 @@
 
 2. [CocoaPods指南](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/CocoaPodsGuides.md)
 
-3. [27个iOS开源库助力你的开发](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/27_iOS_open_source_libraries_to_skyrocket_your_development.md)
+3. [27个iOS开源库助力你的开发](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/27_iOS_open_source_libriraries_to_skyrocket_your_development.md)
