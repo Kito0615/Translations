@@ -346,32 +346,59 @@ Swift中JSON格式化，从未如此简单。
 TL;DR，快速访问以上所有库的列表：
 
 1.[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)[用户界面，空表格视图解决方案]
+
 2.[PDTSimpleCalendar]()[用户界面，拖拽日历控件]
+
 3.[MagicalRecord]()[Core Data实现活跃记录模式帮手]
+
 4.[Chameleon]()[用户界面，色彩框架]
+
 5.[Alamofire]()[Swift网络框架]
+
 6.[TextFieldEffects]()[用户界面，自定义文本框外观]
+
 7.[GPUImage]()[快速图形处理]
+
 8.[iRate]()[获得用户评论]
+
 9.[GameCenterManager]()[方便管理GameCenter]
+
 10.[PKRevealController]()[用户界面，侧滑菜单]
+
 11.[SlackTextViewController]()[用户界面，高度自定义文本框]
+
 12.[RETableViewManager]()[代码动态创建列表视图]
+
 13.[PermissionScope]()[用户界面，友好的系统权限获取请求]
+
 14.[SVProgressHUD]()[用户界面，自定义等待指示器]
+
 15.[FontAwesomeKit]()[添加字体到你的项目更简单]
+
 16.[SnapKit]()[代码布局更方法]
+
 17.[MGSwipeTableCell]()[用户界面，可以滑动的表格行]
+
 18.[Quick]()[Swift单元测试框架]
+
 19.[IAPHelper]()[应用程序内购封装]
+
 20.[ReactiveCocoa]()[FRP框架]
+
 21.[SwfityJSON]()[Swift JSON库]
+
 22.[Spring]()[动画框架]
+
 23.[FontBlaster]()[在程序中快速添加自定义字体]
+
 24.[TAPromotee]()[使用拖拽视图交叉推广你的程序]
+
 25.[Concorde]()[图片下载解码进度条]
+
 26.[KeychainAccess]()[管理Keychain更简单]
+
 27.[iOS-charts]()[好看的图表库]
+
 
 ---
 
