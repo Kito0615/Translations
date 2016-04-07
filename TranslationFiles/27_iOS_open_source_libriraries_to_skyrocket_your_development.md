@@ -4,12 +4,13 @@ __*你绝对不想错过*__
 * 作者:[Pawel Bialecki](https://medium.com/@pawel_bialecki)
 * 翻译:[Mr_龙](http://weibo.com/409498119)
 * 原文:[27 iOS Open source libraries to skyrocket your development.](https://medium.com/app-coder-io/27-ios-open-source-libraries-to-skyrocket-your-development-301b67d3124c#)
---
+
+---
 
     __我喜欢开源！__
 而且我也喜欢那些花费宝贵时间来创造好玩的东西并不求回报地与他人分享这些东西的开发者。**所有为开源做贡献的人们，你们都太棒了！**感谢你们的努力！
 	
-	* * *
+---
 
 下面，从我日常工作中我自己的[APP](https://www.eclerstudios.com/)里，从我非常喜欢的iOS开源库里选出一些开源库，列举在这里。以下排名不分先后，因为它们都很不错。
 
@@ -29,8 +30,6 @@ __*你绝对不想错过*__
 
 `pod 'DZNEmptyDataSet'`
 
-[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)
-
 ###__2.PDTSimpleCalendar__
 
 想要为你的App添加一个简单、好看而且有效的日历组件吗？从现在起，你拥有了可能是iOS上最好的日历组件——PDTSimpleCalendar。
@@ -41,8 +40,6 @@ __*你绝对不想错过*__
 
 `pod 'PDTSimpleCalendar'`
 
-[jivesoftware/PDTSimpleCalendar](https://github.com/jivesoftware/PDTSimpleCalendar)
-
 ###__3.MagicalRecord__
 
 有人说，*Core Data很简单*。也有人说，*它很好用也很简单*。呵呵，说的是苹果产品吗？成千上万的范例代码添加到哪个项目都不是优雅且简单的。还别说添加、删除、更新一大堆的实例、保存上下文、创建为不同的环境不同的Core Data堆栈等等。我当然非常喜欢Core Data，但是苹果*真的*可以用一种稍微好一点的方式——__MagicalRecord的方式__——简化它。
@@ -52,8 +49,6 @@ MagicalRecord的工作方式像将Core Data封装起来，将所有与开发者�
 #####CocoaPods:
 
 `pod 'MagicalRecord'`
-
-[magicalpanda/MagicalRecord](https://github.com/magicalpanda/MagicalRecord)
 
 ###__4.Chameleon__
 
@@ -69,8 +64,6 @@ Chameleon是一个iOS色彩框架.它在UIColor的基础上，扩展出漂亮的
 
 `pod 'ChameleonFramework'`
 
-[ViccAlexander/Chameleon](https://github.com/ViccAlexander/Chameleon)
-
 ###__5.Alamofire__
 
 Alamofire是一个用Swift写的出色的网络连接库。你应该一直都在使用AFNetworking吧？Alamofire是它的亲兄弟。年轻但是更时髦，当然(AFNetworking是用Objective-C写的)。
@@ -82,8 +75,6 @@ Alamofire是一个用Swift写的出色的网络连接库。你应该一直都在
 ####CocoaPods:
 
 `pod 'Alamofilre'`
-
-[Alamofire/Alamofire](https://github.com/Alamofire/Alamofire)
 
 ###__6.TextFiledEffects__
 
@@ -101,8 +92,6 @@ Alamofire是一个用Swift写的出色的网络连接库。你应该一直都在
 
 `github "raulriera/TextFiledEffects"`
 
-[raulriera/TextFiledEffects](https://github.com/raulriera/TextFieldEffects)
-
 ###__7.GPUImage__
 
 你有开发过相机应用吗？如果没有，__在见识这个库之后你一定会尝试的__。
@@ -111,15 +100,11 @@ Alamofire是一个用Swift写的出色的网络连接库。你应该一直都在
 
 GPUImage提供给我们一个GPU(图形处理单元)加速的相机效果(图片和视频都可以)，速度超快！App Store里有几百个app使用了这个库——我的其中一个也使用了:
 
-![我的使用GPUImage的App](https://cdn-images-1.medium.com/max/800/1*o5JTFxgggZUYCvGZm6kh1g.png)
-
 在GitHub上有8869颗星，而且还在增加。
 
 ####CocoaPods:
 
 `pod 'GPUImage'`
-
-[BradLarson/GPUImage](https://github.com/BradLarson/GPUImage)
 
 ###__8.iRate__
 
@@ -128,8 +113,6 @@ GPUImage提供给我们一个GPU(图形处理单元)加速的相机效果(图片
 ####CocoaPods:
 
 `pod 'iRate'`
-
-[nicklockwood/iRate](https://github.com/nicklockwood/iRate)
 
 ###__9.GameCenterManager__
 
@@ -147,8 +130,6 @@ GPUImage提供给我们一个GPU(图形处理单元)加速的相机效果(图片
 
 `pod 'GameCenterManager'`
 
-[nihalahmed/GameCenterManager](https://github.com/nihalahmed/GameCenterManager)
-
 ###__10.PKRevealController2__
 
 这是一块宝石，__我最喜欢的iOS控制模块之一__。PKRevealController2可以滑动的侧边菜单(左右都可以)，往哪边滑取决你的手指(或者通过点击按钮，但是那样并没有滑动操作那样酷)
@@ -161,8 +142,6 @@ GPUImage提供给我们一个GPU(图形处理单元)加速的相机效果(图片
 
 `pod 'PKRevealController'`
 
-[pkluz/PKRevealController](https://github.com/pkluz/PKRevealController)
-
 ###__11.SlackTextViewController__
 
 你使用Slack iOS应用吗？如果你在一家大一点软件公司，你可能用过。对于还没有在自己的app中使用过的人来说——Slack很难。而Slack的iOS程序也很难，特别是对于很棒的、自定义的文本输入控制…，这种情况下，准备好在你的程序中使用这些代码吧！
@@ -172,8 +151,6 @@ __自动增加文本区域？可以。手势识别，自动填充，多媒体复
 ####CocoaPods:
 
 `pod 'SlackTextViewController'`
-
-[slackhq/SlackTextViewController](https://github.com/slackhq/SlackTextViewController)
 
 ###__12.RETableViewManager__
 
@@ -187,8 +164,6 @@ RETableViewManager可以帮助你用代码动态创建和管理表格视图。�
 
 `pod 'RETableViewManager'`
 
-[romaonthego/RETableViewManager](https://github.com/romaonthego/RETableViewManager)
-
 ###__13.PermissionScope__
 
 这是一个好用的库，它通过在需要系统权限__之前__提示征求用户允许提升用户体验。更高的授受度->用户更高的使用率->更好的保留度->更好的统计->更多的下载量。高度推荐的库。
@@ -198,8 +173,6 @@ RETableViewManager可以帮助你用代码动态创建和管理表格视图。�
 ####CocoaPods:
 
 `pod 'PermissionScope'`
-
-[nickoneill/PermissionScope](https://github.com/nickoneill/PermissionScope)
 
 ###__14.SVProgressHUD__
 
@@ -211,8 +184,6 @@ RETableViewManager可以帮助你用代码动态创建和管理表格视图。�
 
 `pod 'SVProgressHUD'`
 
-[TransitApp/SVProgressHUD](https://github.com/TransitApp/SVProgressHUD)
-
 ###__15.FontAwesomeKit__
 
 __Font Awesome 真的很棒！__用这个库，你可以非常方便的在你的项目中添加字体而且在很多方面都可以用它。
@@ -222,8 +193,6 @@ __Font Awesome 真的很棒！__用这个库，你可以非常方便的在你的
 ###CocoaPods:
 
 `pod 'FontAwesomeKit'`
-
-[PrideChung/FontAwesomeKit](https://github.com/PrideChung/FontAwesomeKit)
 
 ###__16.SanpKit__
 
@@ -239,8 +208,6 @@ __Font Awesome 真的很棒！__用这个库，你可以非常方便的在你的
 
 `pod 'SnapKit'`
 
-[SnapKit/SnapKit](https://github.com/SnapKit/SnapKit)
-
 ###__MGSwipeTableCell__
 
 另一个用户界面组件，在许多应用程序中都很常见，苹果应该可以考虑把一些相似的东西添加到标准iOS SDK中。
@@ -252,8 +219,6 @@ __Font Awesome 真的很棒！__用这个库，你可以非常方便的在你的
 ####CocoaPods:
 
 `pod 'MGSwipeTableCell'`
-
-[MortimerGoro/MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell)
 
 ###__18.Quick__
 
@@ -267,8 +232,6 @@ Swift中的单元测试(对Objective-C也可以)，集成了Xcode。如果你是
 
 `pod 'Quick'`
 
-[Quick/Quick](https://github.com/Quick/Quick)
-
 ###__19.IAPHelper__
 
 App内购给我们带来了很多示例代码，这个库都不没有使用，而是给我们一个简单常用的与用户与你(你的公司)交易相关任务封装。
@@ -276,8 +239,6 @@ App内购给我们带来了很多示例代码，这个库都不没有使用，�
 ####CocoaPods:
 
 `pod 'IAPHelper'`
-
-[saturngod/IAPHelper](https://github.com/saturngod/IAPHelper)
 
 ###__20.ReactiveCocoa__
 
@@ -297,8 +258,6 @@ ReactiveCocoa并不一个小型的，拖拽项目，不像列表中的其他项�
 
 `pod 'ReactiveCocoa'`
 
-[ReactiveCocoa/ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa)
-
 ###__21.SwiftyJSON__
 
 Swift中JSON格式化，从未如此简单。
@@ -306,8 +265,6 @@ Swift中JSON格式化，从未如此简单。
 ####CocoaPods:
 
 `pod 'SwiftyJSON'`
-
-[SwiftyJSON/SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON)
 
 ###__22.Spring__
 
@@ -319,8 +276,6 @@ Swift中JSON格式化，从未如此简单。
 
 `pod 'Spring'`
 
-[MengTo/Spring](https://github.com/MengTo/Spring)
-
 ###__23.FontBlaster__
 
 轻轻松松向你的程序中添加自定义字体。
@@ -328,8 +283,6 @@ Swift中JSON格式化，从未如此简单。
 ####CocoaPods:
 
 `pod 'FontBlaster'`
-
-[ArtSabintsev/FontBlaster](https://github.com/ArtSabintsev/FontBlaster)
 
 ###__24.TAPromotee__
 
@@ -341,8 +294,6 @@ Swift中JSON格式化，从未如此简单。
 
 `pod 'TAPromotee'`
 
-[JanC/TAPromotee](https://github.com/JanC/TAPromotee)
-
 ###__25.Concorde__
 
 你有在你的应用程序中显示过很多JPEG图片吗？使用ConCorde库，你可以用更好看的方式完成。带进度的方式。
@@ -352,8 +303,6 @@ Swift中JSON格式化，从未如此简单。
 ####CocoaPods:
 
 `pod 'Concorde'`
-
-[contentful-lab/Concorde](https://github.com/contentful-lab/Concorde)
 
 ###__26.KeychainAccess__
 
@@ -366,8 +315,6 @@ Swift中JSON格式化，从未如此简单。
 ####CocoaPods:
 
 `pod 'KeychainAccess'`
-
-[kishikawakatsumi/KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess)
 
 ###__27.iOS-charts__
 
@@ -393,7 +340,8 @@ Swift中JSON格式化，从未如此简单。
 
 不幸的是，这个库现在还不支持CocoaPods，因此，你需要手动将这个项目拖拽到你的Xcode项目中去。
 
---
+---
+
 TL;DR，快速访问以上所有库的列表：
 
 1.[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)[用户界面，空表格视图解决方案]
@@ -424,7 +372,7 @@ TL;DR，快速访问以上所有库的列表：
 26.[KeychainAccess]()[管理Keychain更简单]
 27.[iOS-charts]()[好看的图表库]
 
-* * *
+---
 
 感谢您阅读这一份长长的列表！如果你觉得这篇文章有价值，**请点击文章下面的*分享*按钮将文章分享出去。**——将会有更多的人受益。——这将会激励我写更多的关于iOS开发的文章。
 
@@ -442,7 +390,7 @@ __推荐阅读:__
 
 __关键字:__  `iOS 开发`  `iOS` `苹果`
 
---
+---
 
 感谢大家看我的翻译，如果有翻译不正确的地方，希望大家可以指出来。
 邮件:[anar0615@sina.com](mailto:anar0615@sina.com)
