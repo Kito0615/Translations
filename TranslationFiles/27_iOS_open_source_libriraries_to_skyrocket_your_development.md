@@ -347,57 +347,57 @@ TL;DR，快速访问以上所有库的列表：
 
 1.[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)[用户界面，空表格视图解决方案]
 
-2.[PDTSimpleCalendar]()[用户界面，拖拽日历控件]
+2.[PDTSimpleCalendar](https://github.com/jivesoftware/PDTSimpleCalendar)[用户界面，拖拽日历控件]
 
-3.[MagicalRecord]()[Core Data实现活跃记录模式帮手]
+3.[MagicalRecord](https://github.com/magicalpanda/MagicalRecord)[Core Data实现活跃记录模式帮手]
 
-4.[Chameleon]()[用户界面，色彩框架]
+4.[Chameleon](https://github.com/ViccAlexander/Chameleon)[用户界面，色彩框架]
 
-5.[Alamofire]()[Swift网络框架]
+5.[Alamofire](https://github.com/Alamofire/Alamofire)[Swift网络框架]
 
-6.[TextFieldEffects]()[用户界面，自定义文本框外观]
+6.[TextFieldEffects](https://github.com/raulriera/TextFieldEffects)[用户界面，自定义文本框外观]
 
-7.[GPUImage]()[快速图形处理]
+7.[GPUImage](https://github.com/BradLarson/GPUImage)[快速图形处理]
 
-8.[iRate]()[获得用户评论]
+8.[iRate](https://github.com/nicklockwood/iRate)[获得用户评论]
 
-9.[GameCenterManager]()[方便管理GameCenter]
+9.[GameCenterManager](https://github.com/nihalahmed/GameCenterManager)[方便管理GameCenter]
 
-10.[PKRevealController]()[用户界面，侧滑菜单]
+10.[PKRevealController](https://github.com/pkluz/PKRevealController)[用户界面，侧滑菜单]
 
-11.[SlackTextViewController]()[用户界面，高度自定义文本框]
+11.[SlackTextViewController](https://github.com/slackhq/SlackTextViewController)[用户界面，高度自定义文本框]
 
-12.[RETableViewManager]()[代码动态创建列表视图]
+12.[RETableViewManager](https://github.com/romaonthego/RETableViewManager)[代码动态创建列表视图]
 
-13.[PermissionScope]()[用户界面，友好的系统权限获取请求]
+13.[PermissionScope](https://github.com/nickoneill/PermissionScope)[用户界面，友好的系统权限获取请求]
 
-14.[SVProgressHUD]()[用户界面，自定义等待指示器]
+14.[SVProgressHUD](https://github.com/TransitApp/SVProgressHUD)[用户界面，自定义等待指示器]
 
-15.[FontAwesomeKit]()[添加字体到你的项目更简单]
+15.[FontAwesomeKit](https://github.com/PrideChung/FontAwesomeKit)[添加字体到你的项目更简单]
 
-16.[SnapKit]()[代码布局更方法]
+16.[SnapKit](https://github.com/SnapKit/SnapKit)[代码布局更方法]
 
-17.[MGSwipeTableCell]()[用户界面，可以滑动的表格行]
+17.[MGSwipeTableCell](https://github.com/MortimerGoro/MGSwipeTableCell)[用户界面，可以滑动的表格行]
 
-18.[Quick]()[Swift单元测试框架]
+18.[Quick](https://github.com/Quick/Quick)[Swift单元测试框架]
 
-19.[IAPHelper]()[应用程序内购封装]
+19.[IAPHelper](https://github.com/saturngod/IAPHelper)[应用程序内购封装]
 
-20.[ReactiveCocoa]()[FRP框架]
+20.[ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa)[FRP框架]
 
-21.[SwfityJSON]()[Swift JSON库]
+21.[SwfityJSON](https://github.com/SwiftyJSON/SwiftyJSON)[Swift JSON库]
 
-22.[Spring]()[动画框架]
+22.[Spring](https://github.com/MengTo/Spring)[动画框架]
 
-23.[FontBlaster]()[在程序中快速添加自定义字体]
+23.[FontBlaster](https://github.com/ArtSabintsev/FontBlaster)[在程序中快速添加自定义字体]
 
-24.[TAPromotee]()[使用拖拽视图交叉推广你的程序]
+24.[TAPromotee](https://github.com/JanC/TAPromotee)[使用拖拽视图交叉推广你的程序]
 
-25.[Concorde]()[图片下载解码进度条]
+25.[Concorde](https://github.com/contentful-lab/Concorde)[图片下载解码进度条]
 
-26.[KeychainAccess]()[管理Keychain更简单]
+26.[KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess)[管理Keychain更简单]
 
-27.[iOS-charts]()[好看的图表库]
+27.[iOS-charts](https://github.com/danielgindi/Charts)[好看的图表库]
 
 
 ---
