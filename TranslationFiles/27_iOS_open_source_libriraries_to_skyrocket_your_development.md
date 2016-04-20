@@ -393,7 +393,7 @@ TL;DR，快速访问以上所有库的列表：
 
 24.[TAPromotee](https://github.com/JanC/TAPromotee)[使用拖拽视图交叉推广你的程序]
 
-25.[Concorde](https://github.com/contentful-lab/Concorde)[图片下载解码进度条]
+25.[Concorde](https://github.com/contentful-labs/Concorde)[图片下载解码进度条]
 
 26.[KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess)[管理Keychain更简单]
 
@@ -423,10 +423,3 @@ __关键字:__  `iOS 开发`  `iOS` `苹果`
 感谢大家看我的翻译，如果有翻译不正确的地方，希望大家可以指出来。
 邮件:[anar0615@sina.com](mailto:anar0615@sina.com)
 微博:[Mr_龙0615](http://weibo.com/409498119)
-
-
-
-
-
-
-
