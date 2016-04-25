@@ -33,15 +33,13 @@
 ####3.规范程序目录结构
 为了保证你大量的源代码在同一个目录中存储，根据你的结构决定你可以设定对应的目录结构。例如，你可以这样:
 
-`|-- Models`
-
-`|-- Views`
-
-`|-- Controllers(or ViewModels, if your architecture is MVV)`
-
-`|-- Stores`
-
-`|-- Helpers`
+```
+|-- Models
+|-- Views
+|-- Controllers(or ViewModels, if your architecture is MVV)
+|-- Stores
+|-- Helpers
+```
 
 首先，在Xcode的项目导航栏创建以上分组(小的黄色的"文件夹")。然后，把每组与项目路径中实际的目录对应，通过右侧的文件检查器，点击小的灰色的文件夹图标创建与你工程目录中名字相同的子文件夹。
 
