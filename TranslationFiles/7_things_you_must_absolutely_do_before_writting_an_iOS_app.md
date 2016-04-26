@@ -1,7 +1,7 @@
 #7件开发iOS程序之前必须要做的事
----
+
 #####作者:[Nlkant and](https://medium.com/@nikantvohra)
-#####翻译:[Mr_龙0615](http://weibo.com)
+#####翻译:[Mr_龙0615](http://weibo.com/409498119)
 #####原文:[7 Things you must absolutely do before writing an iOS app](https://medium.com/ios-os-x-development/7-things-you-must-absolutely-do-before-writing-an-ios-app-a8bacf710c57#.mb53mbct4)
 
 我已经开发高质量的iOS程序产品已经两年了。我知道绝大多数开发者有一种倾向，就是直接进入程序的核心逻辑的编码，这就是乐趣的所在。按流程进行很无聊。
@@ -33,15 +33,13 @@
 ####3.规范程序目录结构
 为了保证你大量的源代码在同一个目录中存储，根据你的结构决定你可以设定对应的目录结构。例如，你可以这样:
 
-`|-- Models`
-
-`|-- Views`
-
-`|-- Controllers(or ViewModels, if your architecture is MVV)`
-
-`|-- Stores`
-
-`|-- Helpers`
+```
+|-- Models
+|-- Views
+|-- Controllers(or ViewModels, if your architecture is MVV)
+|-- Stores
+|-- Helpers
+```
 
 首先，在Xcode的项目导航栏创建以上分组(小的黄色的"文件夹")。然后，把每组与项目路径中实际的目录对应，通过右侧的文件检查器，点击小的灰色的文件夹图标创建与你工程目录中名字相同的子文件夹。
 
@@ -147,7 +145,6 @@ Schemes告诉Xcode当你点击"执行"、"设置"、"配置"、"分析"或者"�
 尽管有许多持续交付的工具可以使用，但是我个人最喜欢的还是Fastlane. 它的设置真的是超级方便，而且功能非常强大。这可以实现整个编译和发布流程自动化。
 
 [fastlane - iOS and Android Automation for Continuous Delivery](https://fastlane.tools/)
-
 
 如果你喜欢这篇文章，建议你分享出去，可以让其他人也能看到并喜欢它。订阅我的[网站](http://www.nikant.me/newsletter/)获取更多文章。
 
