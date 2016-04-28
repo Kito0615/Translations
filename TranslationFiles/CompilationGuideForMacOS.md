@@ -10,7 +10,7 @@
 #####1.自行编译。
 ######在Mac OS X上编译和在其他Unix机器上编译一样简单，但是有几个警告。常规流程是`获取源代码`->`./configure <flags>`->`make && sudo make install`，只需输入指定的flags就可以了。
 #####2.工具编译。
-######另一种方法可以用一些"编译助手"工具来帮助你编译安装FFmpeg。比如[Homebrew](http://brew.sh/)和[macports](https://www.macports.org/)。具体步骤请查看本文[Homebrew章节](https://github.com/Kito0615/Translations/blob/master/CompilationGuideForMacOS.md#通过homebrew安装ffmpeg)。
+######另一种方法可以用一些"编译助手"工具来帮助你编译安装FFmpeg。比如[Homebrew](http://brew.sh/)和[macports](https://www.macports.org/)。具体步骤请查看本文[Homebrew章节](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/CompilationGuideForMacOS.md#通过homebrew安装ffmpeg)。
 #####3.下载安装。
 ######如果你不能编译或者你也不想安装Homebrew，你可以直接下载[FFmpeg For OS X稳定版](https://ffmpeg.org/download.html)，但是，有可能并不包含一些你想要的功能。典型的就是需要你解压文件[如.zip文件]，然后在刚解压出来的文件夹中找到FFmpeg程序路径，运行它。
 --
@@ -69,5 +69,5 @@
 ######`make && sudo make install`
 
 ######最后附上原文链接:[MacOSX](https://trac.ffmpeg.org/wiki/CompilationGuide/MacOSX)
-######对翻译有疑问，请联系[微博](http://weibo.com/409498119)指出。谢谢！转载请注明[本文链接](https://github.com/Kito0615/Translations/blob/master/CompilationGuideForMacOS.md)
+######对翻译有疑问，请联系[微博](http://weibo.com/409498119)指出。谢谢！转载请注明[本文链接](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/CompilationGuideForMacOS.md)
 
