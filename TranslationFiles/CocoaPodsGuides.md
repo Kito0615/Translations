@@ -562,3 +562,42 @@ CocoaPods除了逻辑运行符之外还有一个开放式运算符(Optimistic Op
 * __只允许关于CocoaPods工具的问题__。包含[CocoaPods](https://github.com/CocoaPods/CocoaPods/issues)、[CocoaPods/Core](https://github.com/CocoaPods/Core/issues)和[Xcodeproj](https://github.com/CocoaPods/Xcodeproj/issues)
 * __保证名称简单但好记__。确保你包含的内容可以被用来解决问题。别重复做。好的意见允许我们关注解决问题而不讨论问题。
 
+###常见问题
+#####既然Swift有一个内置的包管理器了，CocoaPods会停止开发吗？
+正如[Swift包管理器\(SPM\)](https://github.com/apple/swift-package-manager)在[README.md](https://github.com/apple/swift-package-manager/blob/master/README.md)中写道:SPM现在还在开发设计的初期。它现在并不支持iOS, OS X, watch OS或Objective-C。即使SPM在开发，CocoaPods将会继续支持Swift和Objective-C。等到SPM接近成熟的时候，我们将会评估CocoaPods和CocoaPods社区最好的前景。
+
+#####为什么不直接使用Git子模块？
+CocoaPods**不是**用来下载代码的。虽然它可以下载，但事实证明那是最不有趣的部分。
+
+CocoaPods的定义是成为依赖库解决方案，就是版本管理和自动集成到Xocde中。
+
+最后，如果你只是找一个下载器，考虑别的吧。事实上，其它一些源代码控制管理(SCM)就是用来下载的。另外，CocoaPods，很多人不知道可以用来处理本地或网络上的Subversion, Mercurial(译者注：前两面两个都SCM)和zip/tarball包。
+
+#####CocoaPods还没有准备好迎接它的黄金时代吗？
+正确。1.0.0版本将会成为我们自信满足Cocoa依赖库管理的基本要求的里程碑。
+
+一旦我们达到1.0.0的里程碑，我们将——真正的第一次——通过邮件列表如cocoa-dev联系整个社区。
+
+#####我要怎样给CocoaPods捐赠？
+TL;DR:我们非常感激这种想法。但是这个项目(作为一个实体)不接受任何商业捐赠。我们写过一篇[博客](https://blog.cocoapods.org/Why-we-dont-accept-donations/)进行说明。
+
+#####CocoaPods并不能做任何事，所以它没用。
+首先，请看第二点。然后，除非你告诉我们缺失的功能并且告诉我们为什么它很重要，否则它不会没用。我们不会费功夫去看Twiter，所以请git上[Issue](https://github.com/CocoaPods/CocoaPods/issues/new)我们，更好的方法是pull-request。
+
+#####CocoaPods并没有做依赖解决方案？
+CocoaPods一直都成为依赖解决方案，但是直到0.35版本，才自动上锁冲突解决方案。到现在，CocoaPods已经可以解决任何可以被解决的冲突。
+
+#####CocoaPods在社区功能上欠缺，因为用户使用它很容易就能添加许多依赖库。
+这就好比说，"我们不需要汽车，因为它们让我们变懒，让我们忘掉走路/跑步",或者"我们不应该使用集成开发工具([IDEs](http://programmers.stackexchange.com/questions/39798/being-ide-dependent-how-can-it-harm-me/39809#39809))，因为它们让我们成为差劲的程序员，我们不能用文本编辑器写代码，不能记住语法"。另外，这个问题同样适用于任何获取代码的基本的方法(如:git)，所以这个问题不值得讨论。
+
+然而，值得讨论的是告知用户的责任。够讽刺的是，CocoaPods的原作者被“使用太多依赖库是不好的”想法给说服了。想要了解如何解决这个问题更多实用的建议，你应该阅读[Manfred Stienstra](https://twitter.com/manfreds)的这篇[博客](http://www.fngtps.com/2013/a-quick-note-on-minimal-dependencies-in-ruby-on-rails/)
+
+#####CocoaPods使用工作空间，被看作是用户数据。为什么不直接使用常规的子工程？
+从Xcode4开始，[苹果为这些目的引入了工作空间](http://developer.apple.com/library/ios/#featuredarticles/XcodeConcepts/Concept-Workspace.html)
+
+自此以后，苹果公司也为每个xcodeproj文档添加了工作空间文件，引导人们相信工作空间只是用户数据。这是不正确的，并且，如果我们这样做了，你**不应该**再忽略工作文件。
+
+需要注意的是，CocoaPods本身并不需要使用工作空间。如果你更喜欢子项目，你可以在命令行执行下面命令:`pod install --no-integrate`，这样就可以按你希望的配置集成到你的项目中。
+
+#####为什么要使用CocoaPods一定要安装Ruby？
+你不需要！OS X已经预安装了Ruby2.0.0或更新版本,在`/usr/bin/ruby`目录中，我们是基于这个实现的。
