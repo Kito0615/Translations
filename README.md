@@ -14,3 +14,5 @@
 3. [27个iOS开源库助力你的开发](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/27_iOS_open_source_libriraries_to_skyrocket_your_development.md)
 
 4. [7件开发iOS程序之前必须要做的事](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/7_things_you_must_absolutely_do_before_writting_an_iOS_app.md)
+
+5. [如何自定义控件(Swift版)](https://github.com/Kito0615/Translations/blob/master/TranslationFiles/How_to_make_a_custom_control.md)
