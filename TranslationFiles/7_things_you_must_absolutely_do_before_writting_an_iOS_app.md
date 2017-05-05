@@ -1,8 +1,8 @@
-#7件开发iOS程序之前必须要做的事
+# 7件开发iOS程序之前必须要做的事
 
-#####作者:[Nlkant and](https://medium.com/@nikantvohra)
-#####翻译:[Mr_龙0615](http://weibo.com/409498119)
-#####原文:[7 Things you must absolutely do before writing an iOS app](https://medium.com/ios-os-x-development/7-things-you-must-absolutely-do-before-writing-an-ios-app-a8bacf710c57#.mb53mbct4)
+##### 作者:[Nlkant and](https://medium.com/@nikantvohra)
+##### 翻译:[Mr_龙0615](http://weibo.com/409498119)
+##### 原文:[7 Things you must absolutely do before writing an iOS app](https://medium.com/ios-os-x-development/7-things-you-must-absolutely-do-before-writing-an-ios-app-a8bacf710c57#.mb53mbct4)
 
 我已经开发高质量的iOS程序产品已经两年了。我知道绝大多数开发者有一种倾向，就是直接进入程序的核心逻辑的编码，这就是乐趣的所在。按流程进行很无聊。
 
@@ -20,7 +20,7 @@
 
 [NYTimes/objective-c-style-guide](https://github.com/NYTimes/objective-c-style-guide)![](https://avatars3.githubusercontent.com/u/221409?v=3&s=20)
 
-####2.开始编码前确定程序的结构
+#### 2.开始编码前确定程序的结构
 
 在开始写代码之前确定程序的结构是非常重要的。良好的结构会使得你的程序经得起考验，容易理解，降低维护成本。你可以遵循传统的MVC(Model-View-Controller)结构，或者尝试更优秀的MVVM或VIPER结构。网络上现在有超多的资料介绍这些结构。
 
@@ -30,7 +30,7 @@
 
 [Modern application architectures (Reactive programming, MVVM beyond)](https://slack-files.com/T051G5Y6D-F0HABHKDK-8e9141e191)
 
-####3.规范程序目录结构
+#### 3.规范程序目录结构
 为了保证你大量的源代码在同一个目录中存储，根据你的结构决定你可以设定对应的目录结构。例如，你可以这样:
 
 ```
@@ -49,7 +49,7 @@
 
 [futurice/ios-good-practices](https://github.com/futurice/ios-good-practices)![](https://avatars3.githubusercontent.com/u/852157?v=3&s=20)
 
-####4.依赖库管理
+#### 4.依赖库管理
 在你程序中，你肯定会用到某些第三方库。以下是三种重要的管理项目中依赖库的方式。
 
 **CocoaPods**
@@ -78,7 +78,7 @@ Carthage的初衷是成为向Cocoa程序添加框架最简单的方式。Carthag
 
 以上就是最常用的三种管理依赖库的方式，而我个人最喜欢的是CocoaPods，因为它设置超级方便而且可以获取到成千上万的第三方库。
 
-####5.为你的程序设置恰当的Schemes
+#### 5.为你的程序设置恰当的Schemes
 
 Schemes告诉Xcode当你点击"执行"、"设置"、"配置"、"分析"或者"打包"的时候，应该干什么。基本上，Schemes标明了这些操作对应的目标和编译配置。你也可以通过传入启动参数，如程序应该运行的语言(手动测试本地化！)或者设置一些调度诊断标志。
 
@@ -98,7 +98,7 @@ Schemes告诉Xcode当你点击"执行"、"设置"、"配置"、"分析"或者"�
 
 [How to Use Xcode Targets to Manage Development and Production Builds](https://www.appcoda.com/using-xcode-targets/)
 
-####6.为你的程序设置恰当的证书及配置文件
+#### 6.为你的程序设置恰当的证书及配置文件
 
 这一步是测试和发布iOS程序最痛苦也是最重要的步骤之一。代码签名需要证书，这样你的程序才能在真机上运行。
 
@@ -118,7 +118,7 @@ Schemes告诉Xcode当你点击"执行"、"设置"、"配置"、"分析"或者"�
 
 [What is a Provisioning Profile> (Pt. 2) by Jay Graves of Double Encore](https://possiblemobile.com/2013/04/what-is-a-provisioning-profile-part-2/)
 
-####7.设置持续集成和交付进度
+#### 7.设置持续集成和交付进度
 
 设置持续集成和交付进度在今天看来有点挑剔了，但是它可以帮助你在开发周期中早点发现问题(bugs)并且节省大量开发时间。
 

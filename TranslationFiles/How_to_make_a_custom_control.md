@@ -1,4 +1,4 @@
-#如何创建自定义控件
+# 如何创建自定义控件
 
 ---
 本文翻译自:[How to Make a Custom Control Tutorial: A Reusable Slider](https://www.raywenderlich.com/76433/how-to-make-a-custom-control-swift)
