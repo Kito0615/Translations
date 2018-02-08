@@ -85,18 +85,19 @@
 ![](https://koenig-media.raywenderlich.com/uploads/2015/08/SimulatorTesting.png)
 
 你定义的单一视图控制器已经设置为**初始视图控制器**，但是程序是如何加载它的？打开**AppDelegate.swift**可以找到答案:
-> import UIKit
-> @UIApplicationMain
-> Class AppDelegate: UIResponder, UIApplicationDelegate {
->	var window: UIWindow?
->	func application(_ application: UIApplication,
->						didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
->					-> Bool {
->	*// Override point for customization after application launch.*
->	return true
->	}
-> }
-
+```
+ import UIKit
+ @UIApplicationMain
+ Class AppDelegate: UIResponder, UIApplicationDelegate {
+	var window: UIWindow?
+	func application(_ application: UIApplication,
+						didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
+					-> Bool {
+	*// Override point for customization after application launch.*
+	return true
+	}
+ }
+```
 文件顶部的**@UIApplicationMain**属性指定了**AppDelegate**类作为模块的入口点。它是继承自**UIResponder**并拥有一个**UIWindow**属性的程序代理使用故事板的必要条件。所有的方法实现都是空的。甚至连**application(_ :didFinishLaunchingWithOptions:)**也只是简单返回真值。
 
 秘密就在**Info.plist**文件中。在**Project Navigator**(项目导航)中打开**Info.plist**你会看到如下内容:
@@ -251,53 +252,59 @@ Xcode也有一个模板可以创建标签栏程序（叫做Tabbed Application te
 表格视图应该显示一系列的玩家信息，因此现在你将要为程序创建主要数据模型-包含**Player**的一个数组。向工程中添加一个iOS/Source标签下的**Swift File**模板文件，并命名为**Player**。
 
 用下面的代码替换**Player.swift**文件内容：
-
-> import Foundation
-> struct Player {
->	*// MARK: -Properties*
->	var name: String?
->	var game: String?
->	var rating: Int
-> }
-
+```
+import Foundation
+struct Player {
+	*// MARK: -Properties*
+	var name: String?
+	var game: String?
+	var rating: Int
+}
+```
 到这里就没有别的什么要做的了。**Player**只是*玩家名字*, *所玩的游戏*和*游戏评分(1-5星)*这三个属性的容器。需要注意的是，你并没有自定义初始化函数，这个结构体会自动接收默认的*memberwise initializer*用来设置它的所有属性。
 
 接着，用**SampleData**命名一个**Swift File**模板。用以下内容替换**SampleData.swift**的内容：
-> import Foundation
-> final class SampleData {
-> 	static func generatePlayersData() -> [Player]{
-> 		return [
->			Player(name: "Bill Evans", game: "Tic-Tac-Toe", rating: 4),
->			Player(name: "Oscar Peterson", game: "Spin the Bottle", rating: 5),
->			Player(name: "Dave Brubeck", game: "Texas Hold 'em Poker", rating: 2)
->			]
->	}
-> }
+```
+import Foundation
+final class SampleData {
+	static func generatePlayersData() -> [Player]{
+		return [
+			Player(name: "Bill Evans", game: "Tic-Tac-Toe", rating: 4),
+			Player(name: "Oscar Peterson", game: "Spin the Bottle", rating: 5),
+			Player(name: "Dave Brubeck", game: "Texas Hold 'em Poker", rating: 2)
+			]
+	}
+ }
+```
 
 现在你在**SampleData**中已经定义了一个静态方法来产生一组硬编码**Player**对象数据了。
 
 然后，打开**PlayersViewController.swift**文件，替换文件为以下内容：
-> import UIKit
-> class PlayerViewController: UITableViewController{
-> 	// MARK: -Properties
-> 	var players = SampleData.generatePlayersData()	
-> }
+```
+import UIKit
+class PlayerViewController: UITableViewController{
+ 	// MARK: -Properties
+ 	var players = SampleData.generatePlayersData()	
+ }
+```
 
 你可以在**PlayerViewController**中定义**players**变量时设置好样例数据。但是这个数据可以来自plist文件或其他外部源，因此给视图控制器添加外部数据是很明智选择。
 
 现在你已经有一个组**Player**对象了，继续在**PlayersViewController**中连接数据源。仍然在**PlayersViewController.swift**文件中，在文件最后添加如下扩展:
-> //MARK: -UITableViewDataSource
-> extension PlayersViewController {
-> 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-> 		return players.count
-> 	}
-> 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-> 		let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath)
-> 		let player = players[indexPath.row]
-> 		cell.textLabel?.text = player.name
-> 		cell.detailTextLabel?.text = player.game
-> 		return cell
-> 	}
+```
+//MARK: -UITableViewDataSource
+extension PlayersViewController {
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+ 		return players.count
+	}
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath)
+		let player = players[indexPath.row]
+		cell.textLabel?.text = player.name
+		cell.detailTextLabel?.text = player.game
+		return cell
+ 	}
+ ```
 > }
 
 **dequeueReusableCell(withIdentifier: for:)**方法会检查是否存在可以重复使用的单元格。如果没有，它会自动生成一个原型单元格并返回给你。你仅仅需要做的提供一个在你在故事板编辑器设置的复用标识-在本教程中是**PlayerCell**。不要忘了设置这个标识，否则这个规则就不适用了。
@@ -358,31 +365,36 @@ Xcode也有一个模板可以创建标签栏程序（叫做Tabbed Application te
 向工程中添加新的**Cocoa Touch Class**模板文件。命名为**PlayerCell**并让它继承自**UITableViewCell**类。取消选中创建XIB选项，因为在故事板已经有了。
 
 然后，把下面的内容添加到**PlayerCell**类的定义中：
-> // MARK: - IBOutlets
-> @IBOutlet weak var gameLabel: UILabel!
-> @IBOutlet weak var nameLabel: UILabel!
-> @IBOutlet weak var ratingImageView: UIImageView!
+```
+// MARK: - IBOutlets
+@IBOutlet weak var gameLabel: UILabel!
+@IBOutlet weak var nameLabel: UILabel!
+@IBOutlet weak var ratingImageView: UIImageView!
+```
 
 这些**IBOutlets**控件可以连接到你的故事板场景中。
 
 然后，在**IBOutlets**后面添加如下属性：
-> *//Mark: -Properties*
-> var player: Player? {
-> 	didSet{
-> 		guard let player = player else { return }	
-> 		gameLabel.text = player.game
-> 		nameLabel.text = player.name
-> 		ratingImageView.image = image(forRating: player.rating)
-> 	}	
-> }
+```
+//Mark: -Properties*
+var player: Player? {
+	didSet{
+		guard let player = player else { return }	
+		gameLabel.text = player.game
+		nameLabel.text = player.name
+		ratingImageView.image = image(forRating: player.rating)
+	}	
+}
+```
 
 当设置**玩家**属性的时候，它会验证是否有值，如果有，就更新**IBOutlets**正确信息。
 接着，在**player**后面添加以下方法：
-
-> func image(forRating rating: Int) -> UIImage> {
-> 	let imageName = "\(rating)Stars"
-> 	return UIImage(named: imageName)
-> }
+```
+func image(forRating rating: Int) -> UIImage> {
+ 	let imageName = "\(rating)Stars"
+ 	return UIImage(named: imageName)
+}
+```
 
 这个函数会根据评分参数返回不同的图片。
 
@@ -399,12 +411,14 @@ Xcode也有一个模板可以创建标签栏程序（叫做Tabbed Application te
 > 这说明在任何时间点可能会有不止一个**PlayerCell**实例。如果你把文本标签从单元格连接到了视图控制器，几个不同的文本标签会使用同一个outlet。那就会导致出错。（另一方面，把原型单元格连接到视图控制器的方法上没有问题。如果你已经在你的单元格上自定义按钮或其他**UIControls**控件。）
 
 现在你已经连接上了属性，你可以简化一下数据源代码。打开**PlayersViewController.swift**，修改**tableView(_ :cellForRowAt:)**内容如下：
-> override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
->	let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as ! PlayerCell
-> 	let player = players[indexPath.row]
-> 	cell.player = player
-> 	return cell
-> }
+```
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+	let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as ! PlayerCell
+ 	let player = players[indexPath.row]
+ 	cell.player = player
+ 	return cell
+}
+```
 
 这不差不多。你现在将从**dequeueReusableCell**方法得到的对象转换为**PlayerCell**，并将正确的**玩家**传给单元格。在**PlayerCell**中设置player(玩家)变量时会自动赋值给文本标签和图片视图。使用原型单元格让你表格视图变得不那么混乱不是很好吗？
 
